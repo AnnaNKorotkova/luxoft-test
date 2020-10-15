@@ -26,8 +26,10 @@ public class FilmController  {
     public Film saveOrUpdate(Film film) {
         return filmService.saveOrUpdate(film);
     }
-    @PostMapping(value = "/")
-    public void delete(Film film) {
+
+    @PostMapping(value = "/{id}")
+    public void delete(@PathVariable int id) {
+        Film film = filmService.get(id);
         filmService.delete(film);
     }
 
