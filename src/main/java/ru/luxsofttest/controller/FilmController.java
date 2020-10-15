@@ -7,8 +7,7 @@ import ru.luxsofttest.model.Film;
 import ru.luxsofttest.model.Genre;
 import ru.luxsofttest.service.FilmService;
 
-@RestController
-@RequestMapping(produces  = MediaType.APPLICATION_JSON_VALUE)
+@RestController("/test")
 public class FilmController  {
 
     private final FilmService filmService;
@@ -38,13 +37,12 @@ public class FilmController  {
         return filmService.findAllByNameSortByName(name);
     }
 
-    @GetMapping("/sort/{name}")
+    @GetMapping("/sort/director/{name}")
     public Page<Film> findAllByDirectorSortByName(@PathVariable String name) {
         return filmService.findAllByDirectorSortByName(name);
     }
 
-
-    @GetMapping("/sort/{name}")
+    @GetMapping("/sort/genre/{name}")
     public Page<Film> findAllByGenreSortByName(@PathVariable String name) {
         return filmService.findAllByGenreSortByName(Genre.valueOf(name));
     }
