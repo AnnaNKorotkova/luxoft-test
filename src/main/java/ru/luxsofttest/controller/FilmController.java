@@ -1,8 +1,10 @@
 package ru.luxsofttest.controller;
 
 import org.springframework.data.domain.Page;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 import ru.luxsofttest.model.Film;
 import ru.luxsofttest.model.Genre;
 import ru.luxsofttest.service.FilmService;
